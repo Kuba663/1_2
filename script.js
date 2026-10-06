@@ -45,6 +45,15 @@
   });
   ex3_two.addEventListener("dragover", (ev) => {
     ev.preventDefault();
-    event.dataTransfer.dropEffect = "move";
+    ev.dataTransfer.dropEffect = "move";
+  });
+  ex3_one.addEventListener("drop", (ev) => {
+    ev.preventDefault();
+    const data = ev.dataTransfer.getData("application/octet-stream");
+    ev.target.appendChild(document.getElementById(data));
+  });
+  ex3_one.addEventListener("dragover", (ev) => {
+    ev.preventDefault();
+    ev.dataTransfer.dropEffect = "move";
   });
 })();
